@@ -1,15 +1,33 @@
-class Loan{
+abstract class Loan{
+//final class Loan{
+//class Loan{
+	
+	final String bankName;
 	double balance;
 	int id;
 	String name;
-	void emi() {
-		System.out.println("Loan EMI ");
+	Loan(){
+		bankName="SBI";
+		System.out.println("loan class constructor call");
 	}
-void tenure() {
+	abstract void emi();
+	//void emi() {
+//		System.out.println("Loan EMI ");
+//	}
+ //final void tenure() {
+	 void tenure() {
 		System.out.println("Generic Tenure");
 	}
 }
 class HomeLoan extends Loan{
+	@Override
+	void emi() {
+		System.out.println("HomeLoan emi");
+	}
+	HomeLoan(){
+		System.out.println("homeloan class constructor call");
+	}
+	
 	
 	void ballonPayment() {
 		System.out.println("Home Loan Ballon Payment");
@@ -25,6 +43,12 @@ class AutoLoan extends Loan{
 	@Override
 void tenure() {
 		System.out.println("Auto Loan Tenure is Low");
+	}
+
+	@Override
+	void emi() {
+		// TODO Auto-generated method stub
+		
 	}
 }
 class LoanCaller {
@@ -44,7 +68,7 @@ public class UpcastingDownCasting {
 	public static void main(String[] args) {
 		LoanCaller caller =new LoanCaller();
 		caller.call(new HomeLoan());
-		caller.call(new AutoLoan());
+		//caller.call(new AutoLoan());
 		// TODO Auto-generated method stub
 		//Loan loan = new HomeLoan();
 		// Human hanuman = new SuperHuman();
