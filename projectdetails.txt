@@ -1,0 +1,23 @@
+Project Name : Test Engine
+Version  - 0.1
+
+It ask for XLS
+Enter the XLS Path
+Our code read the XLS. And read all the question rows from the xls and store each row in a object.
+All objects are store in a ArrayList
+Then delete the XLS.
+
+We need to create a Question class.
+Class Question{
+Id name options rightanswer score yourAnswer
+}
+
+Now print One question at a time. 
+Then ask for the answer
+After getting the user answer store it your answer field
+Now repeat the same steps ask next question.
+
+Once User reach to the last question , then display end test option.
+
+After End Test Option , compute the result 
+So traverse the ArrayList and compare yourAnswer with RightAnswer and give the score.
